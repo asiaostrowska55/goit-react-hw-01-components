@@ -1,4 +1,4 @@
-import css from '../components/Profile.module.css';
+import css from '../components/styles/Profile.module.css';
 
 const Profile = props => {
   const { username, tag, location, avatar, followers, views, likes } = props;
