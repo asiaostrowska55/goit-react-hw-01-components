@@ -13,6 +13,7 @@
   align-items: center;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 16px;
 }
 .list {
   margin: 0 auto;
@@ -22,7 +23,6 @@
   flex-direction: row;
   list-style: none;
   background-color: rgb(204, 205, 218);
-  border-top: 2px solid rgba(121, 122, 125, 0.608);
 }
 .item {
   padding: 10px;
