@@ -1,4 +1,4 @@
-import css from '../components/styles/TransactionHistory.module.css';
+import css from '../components/TransactionHistory/TransactionHistory.module.css';
 import PropTypes from 'prop-types';
 
 const TransactionHistory = ({ items = [] }) => {
