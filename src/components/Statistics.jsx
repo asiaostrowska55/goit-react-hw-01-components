@@ -1,29 +1,40 @@
-const Statistics = ({ title, id, label, percentage }) => {
-  //   const { id, label, percentage } = stats;
-  return (
-    <section className="statistics">
-      <h2 className="title">{title == !'' && 'Upload Stats'}</h2>
+import css from '../components/styles/Statistics.module.css';
+import PropTypes from 'prop-types';
 
-      <ul className="stat-list">
-        <li key={id} className="item">
-          <span className="label">{label}</span>
-          <span className="percentage">{percentage}</span>
-        </li>
-        <li key={id} className="item">
-          <span className="label">{label}</span>
-          <span className="percentage">{percentage}</span>
-        </li>
-        <li key={id} className="item">
-          <span className="label">{label}</span>
-          <span className="percentage">{percentage}</span>
-        </li>
-        <li key={id} className="item">
-          <span className="label">{label}</span>
-          <span className="percentage">{percentage}</span>
-        </li>
+const Statistics = ({ title, stats = [] }) => {
+  return (
+    <section className={css.stats}>
+      {title ? <h2 className={css.title}>{title}</h2> : null}
+
+      <ul className={css.list}>
+        {stats.map(data => (
+          <li
+            key={data.id}
+            className={css.item}
+            style={{ backgroundColor: randomColor() }}
+          >
+            <span className={css.label}>{data.label}</span>
+            <span className={css.percentage}>{data.percentage}%</span>
+          </li>
+        ))}
       </ul>
     </section>
   );
+};
+
+function randomColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default Statistics;
