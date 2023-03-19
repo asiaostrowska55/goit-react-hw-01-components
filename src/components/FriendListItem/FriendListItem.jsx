@@ -1,4 +1,4 @@
-import css from '../components/FriendListItem/FriendListItem.module.css';
+import css from './FriendListItem.module.css';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
